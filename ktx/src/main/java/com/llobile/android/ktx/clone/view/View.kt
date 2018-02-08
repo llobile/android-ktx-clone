@@ -10,8 +10,7 @@ fun View.doOnPreDraw(action: ViewTreeObserver.() -> Boolean) {
     viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
         override fun onPreDraw(): Boolean {
             viewTreeObserver.removeOnPreDrawListener(this)
-            action(viewTreeObserver)
-            return true
+            return action(viewTreeObserver)
         }
     })
 }
